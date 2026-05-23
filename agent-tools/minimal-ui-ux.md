@@ -14,6 +14,7 @@ Hard defaults:
 - no animation that distracts from the task
 - no UI change that risks crashing or destabilizing the app
 - no hiding important actions just to make the page look cleaner
+- treat these as defaults, not absolute bans when product context requires a small exception
 
 ## Before Designing
 
@@ -26,6 +27,7 @@ Inspect the app first:
 
 Prefer what already exists in the app. If the app lacks the needed component, use a reputable prebuilt component or UI library when it reduces risk. Do not add a new UI library without a clear reason.
 If adding a library, explain why existing components are insufficient and how the dependency will avoid extra complexity.
+If the existing UI is weak, improve it incrementally instead of rebuilding the whole visual system in one pass.
 
 ## Layout Rules
 
@@ -36,6 +38,31 @@ If adding a library, explain why existing components are insufficient and how th
 - Keep navigation labels plain and predictable.
 - Make page location clear with active nav state, breadcrumbs, tabs, or heading context when needed.
 - Avoid dense screens. If a page feels crowded, reduce choices or split sections.
+
+## Screen Awareness
+
+Design the whole screen, not isolated components.
+
+Before finalizing layout, check:
+- what appears above the fold on common laptop screens
+- how the page uses space on laptop, desktop, and wide monitor widths
+- whether the primary action is visible without hunting
+- whether sticky headers, sidebars, bottom bars, or footers steal too much space
+- whether modals, dropdowns, toasts, and popovers fit inside the viewport
+- whether important content is hidden below scroll without a cue
+- whether empty/error/loading states still preserve the page shape
+- whether large blank/black areas look accidental or wasted
+
+Rules:
+- Avoid layouts that require horizontal scrolling.
+- Avoid fixed heights that clip content on shorter laptop screens.
+- Use `min-h`, `max-h`, and scroll areas deliberately.
+- Keep main actions near the content they affect.
+- On dashboards, keep summary, action, and list/table relationship visible.
+- Use extra desktop space to improve scanning: summaries, filters, detail panels, helpful empty states, or wider content rhythm.
+- Do not fill blank space with decoration just to fill it.
+- Do not cram the page just to avoid whitespace; useful whitespace is allowed, accidental dead zones are not.
+- If a screen needs scrolling, make the scroll direction and remaining content obvious.
 
 ## Interaction Rules
 
@@ -53,6 +80,7 @@ Cursor rules:
 - draggable areas use a drag/grab cursor only when drag is actually supported
 
 Buttons must feel clickable without being flashy. Use subtle color, border, background, or elevation changes. Do not rely on color alone.
+If interactions look ambiguous, prioritize clarity over stylistic minimalism.
 
 ## Accessibility Rules
 
@@ -73,6 +101,7 @@ Use motion only to clarify cause and effect:
 - lightweight page or section reveal
 
 Keep animations short, subtle, and interruptible. Disable or reduce them for users who prefer reduced motion.
+Use no animation by default when uncertain.
 
 Avoid:
 - bouncing
@@ -93,7 +122,10 @@ Avoid:
 Before finishing UI work:
 - run the repo's lint/typecheck/build command when relevant
 - open the page in a browser when a local target is available
-- check desktop and mobile widths
+- check common laptop and desktop widths
+- inspect the full viewport, not only the component being edited
+- check top-of-page and bottom-of-page behavior
+- check whether any sticky/fixed UI covers content, controls, or focus rings
 - click the primary actions
 - check keyboard tab order and focus visibility
 - check loading, empty, error, disabled, and success states when applicable
@@ -116,4 +148,8 @@ Final self-check:
 - Can the primary action be found in five seconds?
 - Can the page be used without reading a paragraph of explanation?
 - Can the user recover from error/loading/empty states?
-- Did the UI remain stable on mobile and desktop?
+- Did the UI remain stable on common laptop and desktop screens?
+- Did we improve usability without forcing a complete redesign?
+- Does the first screen show the right priority content?
+- Does anything important get trapped, clipped, hidden, or pushed too far down?
+- Are large blank/black spaces intentional and useful, not accidental?
