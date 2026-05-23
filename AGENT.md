@@ -79,6 +79,7 @@ Pick the matching skill, read it, then follow it:
 
 When using skills:
 - Prefer local linked rules over assumptions.
+- If multiple skills match, read the most specific one first.
 - Do not install, delete, commit, push, or mutate external state unless asked or approved.
 - If a tool creates files, name and verify the outputs.
 

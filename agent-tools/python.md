@@ -65,6 +65,8 @@ Prefer reading:
 - `.python-version`
 - `uv.lock` only when dependency details matter
 
+Do not run `uv sync` or install dependencies unless needed to run/verify the requested task.
+
 ## Verification
 
 For code changes, verify with the smallest relevant command first:
@@ -75,6 +77,7 @@ For code changes, verify with the smallest relevant command first:
 
 If a command fails because the script does not exist, report that clearly and fall back to the closest documented command.
 If broad tests fail during collection or for unrelated existing issues, report the exact blocker and run focused tests for the touched area.
+When changing app entrypoints or config, prefer a startup/import check before broad tests.
 
 ## Dependency Rules
 

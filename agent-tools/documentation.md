@@ -34,6 +34,14 @@ Before writing docs, inspect the real project:
 
 Never document setup, test, lint, deploy, or run commands without checking the repo first.
 
+For every doc, identify:
+- audience
+- purpose
+- source files used
+- commands or claims verified
+
+If a claim is inferred, phrase it as inferred or omit it.
+
 ## README
 
 For a README, prefer this structure:
@@ -142,3 +150,4 @@ Before finishing:
 - ensure no secrets are included
 
 If verification was not possible, state exactly what was not verified.
+Do not mark a command as verified unless it was actually run or directly confirmed from repo scripts.

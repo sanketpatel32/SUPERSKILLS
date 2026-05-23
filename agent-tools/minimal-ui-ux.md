@@ -25,6 +25,7 @@ Inspect the app first:
 - routes/pages and where the new UI belongs
 
 Prefer what already exists in the app. If the app lacks the needed component, use a reputable prebuilt component or UI library when it reduces risk. Do not add a new UI library without a clear reason.
+If adding a library, explain why existing components are insufficient and how the dependency will avoid extra complexity.
 
 ## Layout Rules
 
@@ -110,3 +111,9 @@ A good result feels:
 - hard to misuse
 
 If the UI looks impressive but an older non-technical user would hesitate, simplify it.
+
+Final self-check:
+- Can the primary action be found in five seconds?
+- Can the page be used without reading a paragraph of explanation?
+- Can the user recover from error/loading/empty states?
+- Did the UI remain stable on mobile and desktop?

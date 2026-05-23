@@ -46,6 +46,13 @@ Good research:
    - State assumptions and uncertainty.
    - Recommend next steps only when useful.
 
+Keep a simple claim ledger while researching:
+- claim
+- source
+- date/version
+- confidence
+- whether it is fact or inference
+
 ## Source Quality
 
 Prefer:
@@ -134,3 +141,4 @@ What would improve confidence:
 - Do not hide uncertainty.
 - Do not present inference as fact.
 - Do not recommend paid tools/products without checking current pricing and maintenance signals.
+- If research cannot verify the key claim, answer with the best available evidence and say what is missing.

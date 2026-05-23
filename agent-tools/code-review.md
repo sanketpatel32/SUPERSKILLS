@@ -26,6 +26,7 @@ Start from real evidence:
 - repo-specific tool rules such as Python or JavaScript/TypeScript when relevant
 
 If the review target is unclear, state what was reviewed.
+If no diff is available, ask for the PR, branch, staged diff, or file list before giving findings.
 
 ## Review Method
 
@@ -35,6 +36,11 @@ If the review target is unclear, state what was reviewed.
 4. Check edge cases: empty data, retries, partial failures, concurrency, timeouts, invalid input.
 5. Check tests: whether changed behavior has focused coverage and whether existing tests still prove the right thing.
 6. Verify findings against code before reporting. Do not guess.
+
+Before reporting a finding, confirm:
+- exact changed line or nearby caller exists
+- failure mode is plausible from code, not preference
+- suggested fix is smaller than the problem it solves
 
 ## Severity
 
@@ -81,3 +87,4 @@ Residual risk:
 - Cite exact files and lines when possible.
 - Mention pre-existing issues separately from issues introduced by the diff.
 - For large diffs, focus on high-risk paths first and say what was not reviewed deeply.
+- If a finding is only a preference, omit it.

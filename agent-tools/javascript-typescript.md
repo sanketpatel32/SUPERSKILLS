@@ -124,6 +124,7 @@ Prefer reading:
 - README
 
 If repo docs mention commands that do not match the current manifests, trust the current manifests and call out the mismatch.
+Do not run dependency install commands just to inspect the repo.
 
 ## Verification
 
@@ -135,6 +136,7 @@ For code changes, verify with the smallest relevant command first:
 - `npm run build` or `bun run build` for framework, routing, or type-sensitive changes
 
 If a script does not exist, report that clearly and fall back to the closest documented command.
+If both lint and typecheck exist, use the one closest to the changed surface first; run both for broad/shared changes.
 
 ## Dependency Rules
 

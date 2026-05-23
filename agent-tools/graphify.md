@@ -15,6 +15,11 @@ Use Graphify when the user wants a project map, codebase relationship graph, arc
 
 If no path is provided, use the current directory.
 
+Decision rule:
+- build/update graph when the user asks to graph, map, or analyze a corpus
+- query existing graph when `graphify-out/graph.json` exists and the user asks about architecture or relationships
+- do normal source inspection when no graph exists and graph generation was not requested
+
 Before running, state:
 - target path
 - whether this is a full build, update, query, path lookup, or explanation
@@ -62,3 +67,11 @@ Use `graphify-out/GRAPH_REPORT.md` for broad architecture review or when query/p
 /graphify path "Frontend" "Database"
 /graphify explain "AuthModule"
 ```
+
+## Report Format
+
+After Graphify work, report:
+- command or query used
+- files produced or graph queried
+- most important finding
+- any skipped scope or missing evidence

@@ -35,6 +35,15 @@ normal mode
 - Keep code, commands, file paths, errors, API names, and commit messages normal.
 - Do not compress warnings where ambiguity could cause damage.
 - Temporarily use normal clarity for irreversible actions, security issues, or complex step ordering.
+- If compression makes ordering or risk unclear, switch to `lite` for that section.
+- Preserve exact user-requested wording when editing docs, prompts, commits, or code comments.
+
+## Output Contract
+
+- Answer with the minimum useful text.
+- Put the conclusion first.
+- Use bullets only when they reduce reading effort.
+- Do not explain that Caveman mode is active unless the user asks.
 
 ## Example
 

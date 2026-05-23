@@ -36,6 +36,8 @@ Inspect the actual change set first:
 Do not invent motivation, issue numbers, tests, or behavior changes. If evidence is missing, omit it or say it was not run.
 
 If unrelated changes are present, separate them mentally and do not describe files outside the requested/staged change set.
+If nothing is staged and the user asked for a commit, ask whether to stage the relevant files or commit all current changes.
+If the user only asked for a message, do not stage or commit.
 
 ## Commit Creation Rules
 
@@ -45,6 +47,7 @@ If unrelated changes are present, separate them mentally and do not describe fil
 - Do not push unless the user explicitly asks to push.
 - Prefer non-interactive commands.
 - For multi-line messages, prefer writing the message to a temporary file and using `git commit -F <file>` instead of stacking many `-m` flags.
+- Run `git status --short` after committing and report any remaining uncommitted files.
 
 ## Subject Line
 
@@ -200,3 +203,4 @@ Before finalizing a commit message:
 - unrelated files are not described
 - breaking changes are explicit
 - no secrets, credentials, or private tokens are included
+- message does not claim tests ran unless there is evidence

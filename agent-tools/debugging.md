@@ -33,6 +33,16 @@ Before editing, inspect:
 If the issue is runtime-facing, prefer real runtime evidence over static code reading.
 If logs exist, read them first. If logs are missing, ask the user for logs or reproduce the issue to generate them.
 
+Evidence request template:
+
+```text
+Where does it fail?
+- page/command/endpoint/feature:
+
+What evidence do you have?
+- screenshot/log/error text/request-response/repro steps:
+```
+
 ## Isolation Rules
 
 Narrow the bug by boundary:
@@ -87,6 +97,7 @@ What I need next:
 
 Do not keep patching random code when the cause is unknown.
 Ask the user for more evidence, a clue, or permission to gather more runtime data.
+Stop after two failed root-cause hypotheses unless a new evidence source is available.
 
 ## Flaky Bugs
 

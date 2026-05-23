@@ -37,6 +37,7 @@ Never create a skill file without also adding it to `Skills`.
    - Add exact workflow steps.
    - Add safety rules.
    - Add expected output format if the skill produces responses.
+   - Add stop conditions: when to ask the user, when to avoid acting, and when evidence is insufficient.
    - Keep it concise.
 
 5. Update `AGENT.md`.
@@ -61,6 +62,8 @@ A good skill file:
 - tells the agent exactly when to use it
 - gives concrete steps in the right order
 - says what not to do
+- separates trigger, workflow, safety, verification, and output
+- includes examples only when they constrain behavior
 - is short enough to be read every time it triggers
 - preserves user preferences from this repo
 - avoids bloating `AGENT.md`
